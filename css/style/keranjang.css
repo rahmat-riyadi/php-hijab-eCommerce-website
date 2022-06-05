@@ -1,0 +1,115 @@
+.wrapper {
+    height: 92vh;
+}
+
+.right-side {
+    height: 92vh;
+    background-color: #f4f5f6;
+    padding: 0 40px;
+    overflow: auto;
+}
+
+.left-side {
+    position: relative;
+}
+
+.form-wrapper {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    right: 100px;
+    bottom: 50px;
+}
+
+.form-detail i {
+    font-size: 1.7rem;
+}
+
+.form-detail p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.form-header {
+    background-color: #446A46 !important;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.input-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.input-form {
+    background-color: #f4f5f6 !important;
+    border: none !important;
+}
+
+.input-form:focus {
+    box-shadow: none !important;
+}
+
+.form-button {
+    font-weight: 300;
+    display: block;
+    width: 200px;
+    background-color: #446A46 !important;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+}
+
+.form-button:hover {
+    color: #FFFFFF !important;
+}
+
+.item-list {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.order-header {
+    font-size: 1.2rem;
+    color: #446A46;
+    font-weight: 600;
+}
+
+.divider {
+    border-color: #446A46 !important;
+}
+
+.img-container {
+    width: 80px;
+    height: 80px;
+    background-color: rebeccapurple;
+    background-size: cover;
+    background-position: center;
+}
+
+p.title {
+    font-weight: 500;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+p.kuantitas {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #838383;
+}
+
+p.harga {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+p.price {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+p.num {
+    font-size: 1.4rem;
+    font-weight: 500;
+}

@@ -1,0 +1,72 @@
+.side-bar {
+    background-color: #f4f5f6;
+    height: 92vh;
+}
+
+.menu {
+    height: 92vh;
+    overflow: auto;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #446A46;
+}
+
+.category-header {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #446A46;
+}
+
+.list {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+input.radio {
+    box-shadow: none !important;
+}
+
+input.radio:checked {
+    border: none !important;
+    background-color: #446A46;
+    box-shadow: none !important;
+}
+
+label.radio {
+    font-weight: 500;
+}
+
+.btn-filter {
+    background-color: #446A46;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 5px 0;
+    border-radius: 4px;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.hijab-search-box {
+    width: 45%;
+}
+
+.input-container {
+    padding: 5px 10px;
+}
+
+.input-container.hijab {
+    box-shadow: none ;
+}
+
+.hijab-search-box input {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.hijab-search-box input:focus {
+    box-shadow: none !important;
+}

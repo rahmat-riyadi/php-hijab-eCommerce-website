@@ -1,0 +1,84 @@
+.navbar ul li a.hijab {
+    color: black;
+}
+
+.wrapper {
+    height: 92vh !important;
+    background-image: url('../../img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.left-side {
+    height: 92vh;
+}
+
+.form-container {
+    border-radius: 4px;
+    margin: auto;
+    background-color:rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    height: fit-content;
+    width: 100%;
+}
+
+.form-container form {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.header {
+    color: #f4f5f6;
+    font-size: 2.1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.form-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #f4f5f6;
+}
+
+.title {
+    color: #f4f5f6;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.form-label {
+    color: #f4f5f6;
+    font-weight: 300;
+}
+
+.form-input {
+    padding: 5px 10px !important;
+    border: none !important;
+}
+
+.form-input:focus {
+    border: none !important;
+    padding: 5px 10px !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+.btn-submit {
+    background-color: #446A46;
+    color: #f4f5f6;
+    font-weight: 300;
+}
+
+.note {
+    color: #f4f5f6;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.note span a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #f4f5f6;
+}
+
