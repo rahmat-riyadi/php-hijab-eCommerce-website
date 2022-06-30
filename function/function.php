@@ -25,7 +25,7 @@
         $data = query("SELECT * FROM keranjang WHERE id_user = '$userId' AND id_produk = '$id'");
 
         if(empty($data)){
-            $query = "INSERT INTO keranjang VALUES ('', $userId, $id, $kuantitas, $waktu)";
+            $query = "INSERT INTO keranjang VALUES ('', $userId, $id, $kuantitas, '$waktu')";
         } else {
 
             $jumlah = $data[0]['kuantitas'] + $kuantitas;
@@ -56,7 +56,7 @@
             $produkId = $item['id_produk'];
             $kuantitas = $item['kuantitas'];
             $tgl_pembelian = $item['waktu_masuk'];
-            $query = "INSERT INTO pembelian VALUES ('', $userId, $produkId, $kuantitas, $tgl_pembelian)";
+            $query = "INSERT INTO pembelian VALUES ('', $userId, $produkId, $kuantitas, '$tgl_pembelian')";
             mysqli_query($db, $query);
 
         }
@@ -148,7 +148,7 @@
         if($_FILES['gambar']['name'] != ''){
             
             $gambar_loc = $_FILES['gambar']['tmp_name'];
-            $gambar = $data['nama'] . '-' . $_FILES['gambar']['name'];
+            $gambar = $data['produk'] . '-' . $_FILES['gambar']['name'];
             $gambar = str_replace(" ", "-", $gambar);
             move_uploaded_file($gambar_loc, '../assets/product/' . $gambar);
 
@@ -162,7 +162,7 @@
         $id_kategori = $data['id_kategori'];
         $desk_produk = $data['desk_produk'];
 
-        $query = "UPDATE user SET produk = '$produk', id_kategori = '$id_kategori', harga = '$harga', desk_produk = '$desk_produk', gambar = '$gambar' WHERE id = '$id'";
+        $query = "UPDATE hijab SET produk = '$produk', id_kategori = '$id_kategori', harga = '$harga', desk_produk = '$desk_produk', gambar = '$gambar' WHERE id = '$id'";
 
         mysqli_query($db, $query);
 
@@ -192,7 +192,7 @@
             echo "
                 <script>
                     alert('password transaksi salah')
-                    window.location.href = '../pages/keranjang.php
+                    window.location.href = '../pages/keranjang.php'
                 </script>
             ";
         }

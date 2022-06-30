@@ -182,7 +182,7 @@
                             <form action="">
                                 <div class="card item-card m-auto" style="width: 18rem;">
                                     <div class="card-body">
-                                        <img src="../img/hero.jpg" class="card-img-top" alt="...">
+                                        <img src="../assets/product/<?= $item['gambar'] ?>" height="155" style="object-fit: cover; object-position: center;" class="card-img-top" alt="...">
                                         <h5 class="card-title card-home-title mt-3"><?= $item['produk'] ?></h5>
                                         <p class="card-text "><?= $item['kategori'] ?></p>
                                         <p class="card-text card-home-text">Rp <?= number_format($item['harga']) ?>,00</p>

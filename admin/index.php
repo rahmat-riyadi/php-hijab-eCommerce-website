@@ -68,7 +68,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                            <a href="./pembelian.php" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
                             <i class="me-2 bi bi-file-text"></i>
                                 <span class="hide-menu">Penjualan</span>
                             </a>

@@ -2,9 +2,17 @@
 
 require '../function/function.php';
 
-$data = query("SELECT * FROM pembelian JOIN user ON user.id = pembelian.user_id");
+    $tanggal_pembelian = $_GET['tgl'];
 
-$tanggal_pembelian = query("SELECT DISTINCT tanggal_pembelian FROM pembelian ");
+    $data = query(" SELECT * FROM pembelian 
+        JOIN user 
+        ON user.id = pembelian.user_id
+        JOIN hijab
+        ON hijab.id = pembelian.produk_id
+        WHERE tanggal_pembelian = '$tanggal_pembelian'
+    ");
+
+    $total = 0;
 
 ?>
 
@@ -66,43 +74,39 @@ $tanggal_pembelian = query("SELECT DISTINCT tanggal_pembelian FROM pembelian ");
         </aside>
         <div class="page-wrapper p-5 ">
             <div class="container-fluid bg-white shadow rounded-5">
+
+                <a href="./pembelian.php" class="btn btn-primary mb-3 ">kembali</a>
+
+                <div class="alert alert-primary d-flex justify-content-between " role="alert">
+                    <b class="my-auto" >Nama pembeli:  <?= $data[0]['nama'] ?></b>
+                    <a href="" class="btn btn-danger text-white">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </div>
+
                 <table class="table table-striped ">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">nama</th>
-                            <th scope="col">username</th>
-                            <th scope="col">waktu pembelian</th>
-                            <th scope="col">aksi</th>
+                            <th scope="col">produk</th>
+                            <th scope="col">jumlah</th>
+                            <th scope="col">harga</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <?php foreach ($tanggal_pembelian as $i => $tanggal) : ?>
-                            <?php var_dump($tanggal) ?>
-                            <?php if ($tanggal['tanggal_pembelian'] === $data[$i]['tanggal_pembelian']) : ?>
-                                <tr>
-                                    <th scope="row"><?= $i + 1 ?></th>
-                                    <td><?= $data[$i]['nama'] ?></td>
-                                    <td><?= $data[$i]['username'] ?></td>
-                                    <td><?= $data[$i]['tanggal_pembelian'] ?></td>
-                                    <td>
-                                        <a href="./users.php?deleteId=<?= $pembelian['id'] ?>" class="btn btn-danger text-white">hapus</a>
-                                    </td>
-                                </tr>
-                            <?php endif ?>
-                        <?php endforeach ?> -->
                         <?php foreach ($data as $i => $pembelian) : ?>
                             <tr>
                                 <th scope="row"><?= $i + 1 ?></th>
-                                <td><?= $pembelian['nama'] ?></td>
-                                <td><?= $pembelian['username'] ?></td>
-                                <td><?= $pembelian['tanggal_pembelian'] ?></td>
-                                <td>
-                                    <a href="./users.php?deleteId=<?= $pembelian['id'] ?>" class="btn btn-danger text-white">hapus</a>
-                                    <a href="./detail_pembelian.php?tgl=<?= $pembelian['tanggal_pembelian'] ?>" class="btn btn-success text-white">detail</a>
-                                </td>
+                                <td><?= $pembelian['produk'] ?></td>
+                                <td><?= $pembelian['kuantitas'] ?></td>
+                                <td>Rp. <?= number_format($pembelian['harga']) ?></td>
                             </tr>
+                        <?php $total += ($pembelian['harga'] * $pembelian['kuantitas']) ?>
                         <?php endforeach ?>
+                        <tr class="bg-secondary text-white" >
+                            <td colspan="3" > <b>total harga</b></td>
+                            <td><b> Rp. <?= number_format($total) ?> </b> </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

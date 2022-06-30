@@ -15,6 +15,7 @@
     $id = $_GET['id'];
 
     $data = query("SELECT * FROM kategori JOIN hijab ON hijab.id_kategori = kategori.id WHERE hijab.id = '$id'");
+
     $data = $data[0];
 
     $_SESSION['gambar_tmp'] = $data['gambar'];
@@ -56,13 +57,15 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="./index.php" aria-expanded="false"><i class="me-2 bi bi-filter-left"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item">
                             <a href="./penjualan.php" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
-                            <i class="me-2 bi bi-file-text"></i>
+                                <i class="me-2 bi bi-file-text"></i>
                                 <span class="hide-menu">Penjualan</span>
                             </a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
-                            <i class="me-2 bi bi-person-fill"></i>
-                            <span class="hide-menu">Profile</span></a>
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
+                                <i class="me-2 bi bi-person-fill"></i>
+                                <span class="hide-menu">Profile</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -70,14 +73,18 @@
         </aside>
         <div class="page-wrapper">
             <div class="container-fluid">
-
                 <main>
-                    <form action="../function/update_item.php" method="post">  
+
+                    <form action="../function/update_item.php" method="post" enctype="multipart/form-data">  
+
+                        <input type="hidden" name="id" value="<?= $data['id'] ?>" >
 
                         <div class="py-2 mb-3">
                             <img class="mb-4 rounded" src="<?= $product_picture ?>" alt="" width="300">
-                            <input type="file" name="" id="" class="d-block">
+                            <input type="file" name="gambar" id="" class="d-block">
                         </div>
+
+                        
     
                         <div class="row g-5">
                             <div class="col-md-7 col-lg-8">
@@ -97,7 +104,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="floatingTextarea2">Deskripsi</label>
-                                        <textarea class="form-control" name="desk_produk"  id="floatingTextarea2" style="height: 270px">
+                                        <textarea class="form-control" name="desk_produk" id="floatingTextarea2" style="height: 270px">
                                             <?= $data['desk_produk'] ?>
                                         </textarea>
                                     </div>
@@ -109,6 +116,7 @@
                                 <button class="w-100 btn btn-primary btn-lg" type="submit">submit</button>
                             </div>
                         </div>
+
                     </form>
                 </main>
 
